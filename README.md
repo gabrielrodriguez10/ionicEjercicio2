@@ -4,32 +4,32 @@
 - Este proyecto permite realizar el consumo de un API REST por medio del modulo HttpClientModule, ademas es necesario crear un provider que es el encargado del consumo del API REST. Estos dos componentes deben ser declarados en el archivo app.module.ts y el consumo del API REST se realiza desde el provider creado user-service.ts, posterirmente en el archivo TypeScript se hace el llamado al servicio (API REST) y en el html se visualiza el resultado del servicio. 
 
 * Archivo app.module.ts
-import { HttpClientModule } from '@angular/common/http';
-import { UserServiceProvider } from '../providers/user-service/user-service';
+        import { HttpClientModule } from '@angular/common/http';
+        import { UserServiceProvider } from '../providers/user-service/user-service';
 
-@NgModule({
-    declarations: [
-        MyApp,
-        HomePage
-    ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        IonicModule.forRoot(MyApp)
-    ],
-    bootstrap: [IonicApp],
-    entryComponents: [
-        MyApp,
-        HomePage
-    ],
-    providers: [
-        StatusBar,
-        SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler},
-        UserServiceProvider
-    ]
-})
-export class AppModule {}
+        @NgModule({
+            declarations: [
+                MyApp,
+                HomePage
+            ],
+            imports: [
+                BrowserModule,
+                HttpClientModule,
+                IonicModule.forRoot(MyApp)
+            ],
+            bootstrap: [IonicApp],
+            entryComponents: [
+                MyApp,
+                HomePage
+            ],
+            providers: [
+                StatusBar,
+                SplashScreen,
+                {provide: ErrorHandler, useClass: IonicErrorHandler},
+                UserServiceProvider
+            ]
+        })
+        export class AppModule {}
 
 * Archivo user-service.ts
 import { HttpClient } from '@angular/common/http';
